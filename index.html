@@ -4,67 +4,70 @@
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <title>Calorie Counter</title>
-  <link rel="stylesheet" href="style.css">
+  <script src="https://cdn.tailwindcss.com"></script>
 </head>
-<body>
-  <form id="calorie-counter">
-    <label for="budget">Budget</label>
-    <input type="number" id="budget" min="0" placeholder="Daily calorie budget" required>
-      <fieldset id="breakfast">
+<body class="bg-orange-200 text-gray-100 font-sans p-8">
 
-        <legend>Breakfast</legend>
-        <div class="input-container"></div>
-      </fieldset>
-      
-      <fieldset id="lunch">
-     
-        <legend>Lunch</legend>
-        <div class="input-container"></div>
-      </fieldset>
+  <form id="calorie-counter" class="max-w-3xl mx-auto bg-sky-950 p-8 rounded-lg shadow-lg space-y-6">
+    <label for="budget" class="block text-lg font-semibold">Budget</label>
+    <input type="number" id="budget" min="0" placeholder="Daily calorie budget" required
+           class="w-full p-3 border border-gray-300 rounded-lg text-gray-900 focus:outline-none focus:ring-2 focus:ring-yellow-400">
 
-      <fieldset id="dinner">
-       
-        <legend>Dinner</legend>
-        <div class="input-container"></div>
-      </fieldset>
+    <fieldset id="breakfast" class="p-4 border border-yellow-400 rounded-lg space-y-4">
+      <legend class="text-lg font-semibold text-yellow-400">Breakfast</legend>
+      <div class="input-container space-y-4"></div>
+    </fieldset>
 
-      <fieldset id="snacks">
-        
-        <legend>Snacks</legend>
-        <div class="input-container"></div>
-      </fieldset>
+    <fieldset id="lunch" class="p-4 border border-yellow-400 rounded-lg space-y-4">
+      <legend class="text-lg font-semibold text-yellow-400">Lunch</legend>
+      <div class="input-container space-y-4"></div>
+    </fieldset>
 
-      <fieldset id="exercise">
-       
-        <legend>Exercise</legend>
-        <div class="input-container"></div>
-      </fieldset>
+    <fieldset id="dinner" class="p-4 border border-yellow-400 rounded-lg space-y-4">
+      <legend class="text-lg font-semibold text-yellow-400">Dinner</legend>
+      <div class="input-container space-y-4"></div>
+    </fieldset>
 
-      <div class="controls">
-        <span>
-          <label for="entry-dropdown">Add food or exercise:</label>
-          <select name="options" id="entry-dropdown">
-            <option value="breakfast" selected>Breakfast</option>
-            <option value="lunch">Lunch</option>
-            <option value="dinner">Dinner</option>
-            <option value="snacks">Snacks</option>
-            <option value="exercise">Exercise</option>
-          </select>
-          <button id="add-entry">Add Entry</button>
-        </span>
-      </div>
+    <fieldset id="snacks" class="p-4 border border-yellow-400 rounded-lg space-y-4">
+      <legend class="text-lg font-semibold text-yellow-400">Snacks</legend>
+      <div class="input-container space-y-4"></div>
+    </fieldset>
 
+    <fieldset id="exercise" class="p-4 border border-yellow-400 rounded-lg space-y-4">
+      <legend class="text-lg font-semibold text-yellow-400">Exercise</legend>
+      <div class="input-container space-y-4"></div>
+    </fieldset>
+
+    <div class="controls flex justify-between items-center space-x-4">
       <div>
-        <button id="submit" type="submit">Calculate Remaining Calories</button>
-        <button id="clear" type="button">Clear</button>
+        <label for="entry-dropdown" class="block text-lg font-semibold">Add food or exercise:</label>
+        <select name="options" id="entry-dropdown" 
+                class="w-full p-3 border border-gray-300 rounded-lg text-gray-900 focus:outline-none focus:ring-2 focus:ring-yellow-400">
+          <option value="breakfast" selected>Breakfast</option>
+          <option value="lunch">Lunch</option>
+          <option value="dinner">Dinner</option>
+          <option value="snacks">Snacks</option>
+          <option value="exercise">Exercise</option>
+        </select>
       </div>
-      
-      <div id="output" class="output hide"></div>
+      <button id="add-entry" class="bg-blue-400 text-blue-900 px-4 py-2 rounded-lg hover:bg-blue-600 transition">Add Entry</button>
+    </div>
 
+    <div class="flex justify-between space-x-4">
+      <button id="submit" type="submit" 
+              class="w-full bg-blue-400 text-blue-900 px-4 py-2 rounded-lg font-bold hover:bg-yellow-500 transition">
+        Calculate Remaining Calories
+      </button>
+      <button id="clear" type="button" 
+              class="w-full bg-red-500 text-white px-4 py-2 rounded-lg font-bold hover:bg-red-600 transition">
+        Clear
+      </button>
+    </div>
+
+    <div id="output" class="output hide p-4 bg-lime-900 text-center rounded-lg mt-6"></div>
   </form>
 
-<script src="script.js">
-</script>
+<script src="script.js"></script>
 
 </body>
 </html>
